@@ -1,0 +1,7 @@
+input/
+app/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+app/routes/__pycache__/
+.env
