@@ -1,0 +1,60 @@
+export default {
+  datasets: [
+    {
+      id: "dataset-1",
+      title: "Economic Indicators",
+      description: "Global economic indicators including GDP, CPI, and more",
+      details: "Contains data for 50+ countries with quarterly and annual metrics from 2000-2024",
+      category: "GDP",
+    },
+    {
+      id: "dataset-2",
+      title: "Stock Market Data",
+      description: "Historical stock prices and market indices",
+      details: "Daily stock prices, volumes, and market indices for major global exchanges",
+      category: "Finance",
+    },
+    {
+      id: "dataset-3",
+      title: "Climate Data",
+      description: "Global climate and weather patterns",
+      details: "Temperature, precipitation, and climate metrics from weather stations worldwide",
+      category: "Environment",
+    },
+  ],
+  examples: [
+    {
+      id: "example-1",
+      title: "GDP Growth Comparison",
+      query: "Compare the GDP growth rates of India, China, and the US over the last decade",
+      sql: "SELECT year, country, growth_rate\nFROM economic_indicators\nWHERE country IN ('India', 'China', 'US')\nAND indicator_type = 'GDP'\nAND year >= 2014\nORDER BY year, country",
+    },
+    {
+      id: "example-2",
+      title: "Inflation Analysis",
+      query: "Show me the correlation between inflation rate and unemployment in the Eurozone",
+      sql: "SELECT year, AVG(inflation_rate) as avg_inflation, AVG(unemployment_rate) as avg_unemployment\nFROM economic_indicators\nWHERE region = 'Eurozone'\nAND year BETWEEN 2010 AND 2024\nGROUP BY year\nORDER BY year",
+    },
+  ],
+  templates: [
+    {
+      id: "template-1",
+      title: "Economic Dashboard",
+      description: "Comprehensive view of key economic indicators",
+      details: "Pre-built dashboard with GDP, inflation, unemployment, and trade balance metrics",
+    },
+    {
+      id: "template-2",
+      title: "Market Analysis",
+      description: "Stock market performance and trends",
+      details: "Template for analyzing stock performance, sector trends, and market indicators",
+    },
+    {
+      id: "template-3",
+      title: "Quarterly Report",
+      description: "Structured quarterly business report",
+      details: "Template for generating comprehensive quarterly business performance reports",
+    },
+  ],
+}
+

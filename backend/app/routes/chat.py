@@ -2,29 +2,38 @@ from flask import Blueprint, request, jsonify
 import sqlite3
 import uuid
 from datetime import datetime
+from pymongo import MongoClient
 
 chat_bp = Blueprint('chat', __name__)
 
-# Simulated in-memory chat history (replace with a database in production)
 chat_history = []
+file = "shop.db"
+
+MONGO_URI = "mongodb+srv://smh01:mnbvcx12@cluster0.amgq0s8.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+mongo_client = MongoClient(MONGO_URI)
+db = mongo_client["try1"] 
 
 def get_database_schema():
-    conn = sqlite3.connect("input\\dataset.db")
+    conn = sqlite3.connect(f"input\\{file}")
     cursor = conn.cursor()
     
     cursor.execute("SELECT name FROM sqlite_master WHERE type='table'")
     tables = cursor.fetchall()
     if not tables:
-        return None
-    
-    table_name = tables[0][0]  # Assuming one table for simplicity
-    cursor.execute(f"PRAGMA table_info({table_name})")
-    columns = cursor.fetchall()
-    
-    schema = {
-        "tableName": table_name,
-        "columns": [{"name": col[1], "type": col[2]} for col in columns]
-    }
+        return []
+
+    schema = []
+    for table in tables:
+        table_name = table[0]
+        cursor.execute(f"PRAGMA table_info({table_name})")
+        columns_info = cursor.fetchall()
+        column_names = [col[1] for col in columns_info]  # col[1] is the column name
+
+        schema.append({
+            "table_name": table_name,
+            "columns": column_names
+        })
+
     conn.close()
     return schema
 

@@ -1,0 +1,55 @@
+{
+  "id": "user-1",
+  "name": "Pranav Aggarwal",
+  "email": "pranav@example.com",
+  "avatar": "/placeholder.svg?height=80&width=80",
+  "preferences": {
+    "notifications": true,
+    "dataSharing": false,
+    "theme": "system"
+  },
+  "activity": [
+    {
+      "id": "activity-1",
+      "type": "query",
+      "title": "GDP growth analysis",
+      "description": "Analyzed GDP growth rates for India",
+      "timestamp": "2025-03-24T10:23:00Z"
+    },
+    {
+      "id": "activity-2",
+      "type": "report",
+      "title": "Created quarterly report",
+      "description": "Generated Q1 economic performance report",
+      "timestamp": "2025-03-23T15:45:00Z"
+    },
+    {
+      "id": "activity-3",
+      "type": "download",
+      "title": "Downloaded dataset",
+      "description": "Economic indicators dataset (2020-2024)",
+      "timestamp": "2025-03-10T09:30:00Z"
+    }
+  ],
+  "savedQueries": [
+    {
+      "id": "saved-1",
+      "title": "GDP growth comparison (India vs. China)"
+    },
+    {
+      "id": "saved-2",
+      "title": "Inflation trends in emerging markets"
+    },
+    {
+      "id": "saved-3",
+      "title": "Quarterly sector performance analysis"
+    }
+  ],
+  "subscription": {
+    "plan": "Pro",
+    "price": "$29/month",
+    "billingCycle": "monthly",
+    "status": "active"
+  }
+}
+
